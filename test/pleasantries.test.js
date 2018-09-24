@@ -17,6 +17,12 @@ describe('pleasantries', () => {
         const greeting = greet('');
         assert.equal(greeting, 'hello stranger!');
     });
+
+    it('throws error when name is not a string', () => {
+        assert.throws(() => {
+            greet({});
+        }, Error);
+    });
 });
 
 describe('farewell', () => {
